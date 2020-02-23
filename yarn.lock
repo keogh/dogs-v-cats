@@ -1263,6 +1263,46 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+"@tensorflow/tfjs-converter@1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@tensorflow/tfjs-converter/-/tfjs-converter-1.5.2.tgz#ec1373f421313bdc6aac46d5578deb58e5093e8c"
+  integrity sha512-RRrB8lZFxjLPHO6TwEJPgViVuJP5yqq0IPqA35PhWLYjsNNuC6Tx8vxEa5BZ0Le0mX21CTURak6pdmyac/Jc2w==
+
+"@tensorflow/tfjs-core@1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@tensorflow/tfjs-core/-/tfjs-core-1.5.2.tgz#df76752cf7c43987df1548fb69820935bd8215d7"
+  integrity sha512-Rj6l8xf0PxrEKctvX3bvxjqhHLaCBQT0ChvqFK6//HBu8A1/ao4SzeVKpXKNnP9Niax+qV3c9U9VcOwwIkCMag==
+  dependencies:
+    "@types/offscreencanvas" "~2019.3.0"
+    "@types/seedrandom" "2.4.27"
+    "@types/webgl-ext" "0.0.30"
+    "@types/webgl2" "0.0.4"
+    node-fetch "~2.1.2"
+    seedrandom "2.4.3"
+
+"@tensorflow/tfjs-data@1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@tensorflow/tfjs-data/-/tfjs-data-1.5.2.tgz#04a585f71e36bda3dbffe8844a2468a0adb63efa"
+  integrity sha512-ruCsTSyH67CADWthgLQlWKh8u8YGEXD+4vsW8uOGdFNcDFLcL0ffy4jsSzIV/X6NdPIWYsvSHmiz57LtgfCFew==
+  dependencies:
+    "@types/node-fetch" "^2.1.2"
+    node-fetch "~2.1.2"
+
+"@tensorflow/tfjs-layers@1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@tensorflow/tfjs-layers/-/tfjs-layers-1.5.2.tgz#8d92e8a1462f7be6b6ee9a1e5217ea3a21fbc1f9"
+  integrity sha512-fn2hi5D1sOKGEgiBCuoU/hTHO87znODweGivIn6x2HMtF1EC39QWroYQBWzJyrWWMOUZZ4nOFR6coA0Fkhc+nA==
+
+"@tensorflow/tfjs@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@tensorflow/tfjs/-/tfjs-1.5.2.tgz#d1ebd5730429ae970b65dd228c101c7bf1ca90de"
+  integrity sha512-BCvcbnkE/zMdORIGE7TFAiJU3zLLVUaRv/HyWucVVyHU40oU4L5mGyRXK6RwqU38KmeK3HSI5rUHop4cLNUaRQ==
+  dependencies:
+    "@tensorflow/tfjs-converter" "1.5.2"
+    "@tensorflow/tfjs-core" "1.5.2"
+    "@tensorflow/tfjs-data" "1.5.2"
+    "@tensorflow/tfjs-layers" "1.5.2"
+
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
@@ -1331,6 +1371,13 @@
   resolved "https://registry.yarnpkg.com/@types/mkdirp/-/mkdirp-0.3.29.tgz#7f2ad7ec55f914482fc9b1ec4bb1ae6028d46066"
   integrity sha1-fyrX7FX5FEgvybHsS7GuYCjUYGY=
 
+"@types/node-fetch@^2.1.2":
+  version "2.5.4"
+  resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.5.4.tgz#5245b6d8841fc3a6208b82291119bc11c4e0ce44"
+  integrity sha512-Oz6id++2qAOFuOlE1j0ouk1dzl3mmI1+qINPNBhi9nt/gVOz0G+13Ao6qjhdF0Ys+eOkhu6JnFmt38bR3H0POQ==
+  dependencies:
+    "@types/node" "*"
+
 "@types/node@*":
   version "13.5.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-13.5.0.tgz#4e498dbf355795a611a87ae5ef811a8660d42662"
@@ -1340,6 +1387,11 @@
   version "7.10.9"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-7.10.9.tgz#4343e3b009f8cf5e1ed685e36097b74b4101e880"
   integrity sha512-usSpgoUsRtO5xNV5YEPU8PPnHisFx8u0rokj1BPVn/hDF7zwUDzVLiuKZM38B7z8V2111Fj6kd4rGtQFUZpNOw==
+
+"@types/offscreencanvas@~2019.3.0":
+  version "2019.3.0"
+  resolved "https://registry.yarnpkg.com/@types/offscreencanvas/-/offscreencanvas-2019.3.0.tgz#3336428ec7e9180cf4566dfea5da04eb586a6553"
+  integrity sha512-esIJx9bQg+QYF0ra8GnvfianIY8qWB0GBx54PK5Eps6m+xTj86KLavHv6qDhzKcu5UUOgNfJ2pWaIIV7TRUd9Q==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -1379,10 +1431,25 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/seedrandom@2.4.27":
+  version "2.4.27"
+  resolved "https://registry.yarnpkg.com/@types/seedrandom/-/seedrandom-2.4.27.tgz#9db563937dd86915f69092bc43259d2f48578e41"
+  integrity sha1-nbVjk33YaRX2kJK8QyWdL0hXjkE=
+
 "@types/tmp@^0.0.32":
   version "0.0.32"
   resolved "https://registry.yarnpkg.com/@types/tmp/-/tmp-0.0.32.tgz#0d3cb31022f8427ea58c008af32b80da126ca4e3"
   integrity sha1-DTyzECL4Qn6ljACK8yuA2hJspOM=
+
+"@types/webgl-ext@0.0.30":
+  version "0.0.30"
+  resolved "https://registry.yarnpkg.com/@types/webgl-ext/-/webgl-ext-0.0.30.tgz#0ce498c16a41a23d15289e0b844d945b25f0fb9d"
+  integrity sha512-LKVgNmBxN0BbljJrVUwkxwRYqzsAEPcZOe6S2T6ZaBDIrFp0qu4FNlpc5sM1tGbXUYFgdVQIoeLk1Y1UoblyEg==
+
+"@types/webgl2@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@types/webgl2/-/webgl2-0.0.4.tgz#c3b0f9d6b465c66138e84e64cb3bdf8373c2c279"
+  integrity sha512-PACt1xdErJbMUOUweSrbVM7gSIYm1vTncW2hF6Os/EeWi6TXYAYMPp+8v6rzHmypE5gHrxaxZNXgMkJVIdZpHw==
 
 "@typescript-eslint/eslint-plugin@^2.11.0":
   version "2.17.0"
@@ -8165,7 +8232,7 @@ node-eta@^0.9.0:
   resolved "https://registry.yarnpkg.com/node-eta/-/node-eta-0.9.0.tgz#9fb0b099bcd2a021940e603c64254dc003d9a7a8"
   integrity sha1-n7CwmbzSoCGUDmA8ZCVNwAPZp6g=
 
-node-fetch@2.1.2:
+node-fetch@2.1.2, node-fetch@~2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
   integrity sha1-q4hOjn5X44qUR1POxwb3iNF2i7U=
@@ -10416,6 +10483,11 @@ scroll-behavior@^0.9.10:
   dependencies:
     dom-helpers "^3.4.0"
     invariant "^2.2.4"
+
+seedrandom@2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/seedrandom/-/seedrandom-2.4.3.tgz#2438504dad33917314bff18ac4d794f16d6aaecc"
+  integrity sha1-JDhQTa0zkXMUv/GKxNeU8W1qrsw=
 
 seek-bzip@^1.0.5:
   version "1.0.5"
