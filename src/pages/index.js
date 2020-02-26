@@ -1,19 +1,38 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, useEffect } from "react"
 // import { Link } from "gatsby"
 import * as tf from '@tensorflow/tfjs';
 
 import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
 
 import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
 
 
+const useModel = url => {
+  const [model, setModel] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const tfModel = await tf.loadLayersModel(url);
+      tfModel.summary();
+
+      setModel(tfModel);
+    })();
+  }, [url]);
+
+  return model;
+}
+
 
 const IndexPage = ({ location }) => {
   const [imageSrc, setImageSrc] = useState(null);
   const [predictedData, setPredictedData] = useState(null);
   const imageEl = useRef(null);
+
+  const model = useModel(`${location.href}model/model.json`);
 
   const handleImageChange = e => {
     const reader = new FileReader();
@@ -23,29 +42,23 @@ const IndexPage = ({ location }) => {
     setPredictedData(null);
   }
 
-  const handlePredict = async () => {
-    const model = await tf.loadLayersModel(`${location.href}model/model.json`);
-    model.summary()
-
+  const handlePredict = () => {
     let example = tf.image.resizeBilinear(
       tf.browser.fromPixels(imageEl.current), [150, 150]
     );
-
     let examples = example.reshape([1, 150, 150, 3])
     examples = tf.div(examples, tf.scalar(255.0, 'float32'));
-    window.example = example;
-    window.examples = examples;
 
     const prediction = model.predict(examples)
-    window.prediction = prediction;
-    const predictedValue = prediction.dataSync()
+    const predictedValue = prediction.dataSync()[0];
 
-    let label = 'cat';
+    let label = '';
     let prob = 0.0;
     if (predictedValue > 0.5) {
-      label = 'dog';
+      label = 'Dog';
       prob = predictedValue * 100;
     } else {
+      label = 'Cat';
       prob = (1 - predictedValue) * 100;
     }
 
@@ -59,10 +72,11 @@ const IndexPage = ({ location }) => {
   return (
     <Layout>
       <SEO title="Home" />
+      <CssBaseline />
       <div>
-        <p>
+        <Typography paragraph>
           Select a image:
-        </p>
+        </Typography>
         <p>
           <input
             id="input-image"
@@ -72,15 +86,27 @@ const IndexPage = ({ location }) => {
           />
         </p>
         <p>
-          <Button variant="contained" color="primary" onClick={handlePredict}>
+          <Button variant="contained" color="primary" onClick={handlePredict} disabled={!imageSrc}>
             Predict
           </Button>
         </p>
         {predictedData && (
           <>
-            <p>This is a {predictedData.label}</p>
-            <p>I'm {Intl.NumberFormat('en-US', { maximumFractionDigits: 3 }).format(predictedData.prob)}% sure of that!</p>
-            <p>Predicted value: {predictedData.predictedValue}</p>
+            <p>
+              <Typography display="inline" variant="h5">
+                This is a&nbsp;
+              </Typography>
+              <Typography display="inline" variant="h3" color="primary">
+                {predictedData.label}
+              </Typography>
+            </p>
+
+            <Typography paragraph>
+              I'm <strong>{Intl.NumberFormat('en-US', { maximumFractionDigits: 3 }).format(predictedData.prob)}%</strong> sure of that!
+            </Typography>
+            <Typography paragraph>
+              Predicted value: <strong>{predictedData.predictedValue}</strong>
+            </Typography>
           </>
         )}
         <p>
@@ -89,13 +115,6 @@ const IndexPage = ({ location }) => {
           }
         </p>
       </div>
-      {/* <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
-      <Link to="/page-2/">Go to page 2</Link> */}
     </Layout>
   );
 }
