@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react"
 // import { Link } from "gatsby"
 import * as tf from '@tensorflow/tfjs';
 
+import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
@@ -25,10 +26,17 @@ const useModel = url => {
   }, [url]);
 
   return model;
-}
+};
 
+// TODO: Migrate to TailwingCSS
+const useStyles = makeStyles(() => ({
+  predictedPet: {
+    marginBottom: 12,
+  }
+}));
 
 const IndexPage = ({ location }) => {
+  const classes = useStyles();
   const [imageSrc, setImageSrc] = useState(null);
   const [predictedData, setPredictedData] = useState(null);
   const imageEl = useRef(null);
@@ -36,6 +44,11 @@ const IndexPage = ({ location }) => {
   const model = useModel(`${location.href}model/model.json`);
 
   const handleImageChange = e => {
+    const imageFile = e.target.files[0];
+    if (!imageFile) {
+      return;
+    }
+
     const reader = new FileReader();
 
     reader.onload = event => setImageSrc(event.target.result);
@@ -97,14 +110,14 @@ const IndexPage = ({ location }) => {
         </p>
         {predictedData && (
           <>
-            <p>
+            <div className={classes.predictedPet}>
               <Typography display="inline" variant="h5">
                 This is a&nbsp;
               </Typography>
               <Typography display="inline" variant="h4" color="primary">
                 <strong>{predictedData.label}</strong>
               </Typography>
-            </p>
+            </div>
 
             <Typography paragraph>
               I'm <strong>{Intl.NumberFormat('en-US', { maximumFractionDigits: 3 }).format(predictedData.prob)}%</strong> sure of that!
