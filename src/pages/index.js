@@ -90,7 +90,7 @@ const IndexPage = ({ location }) => {
       <div>
         <div className={classes.someMarginBottom}>
           <Typography gutterBottom variant="h6">
-            This a image classifier that tries to predict whether the selected image is a Dog or Cat.
+            This an image classifier that tries to predict whether the selected image is a Dog or a Cat.
           </Typography>
         </div>
 
