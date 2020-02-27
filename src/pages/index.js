@@ -133,11 +133,17 @@ const IndexPage = ({ location }) => {
             </Typography>
           </>
         )}
-        <p>
-          {imageSrc &&
-            <img id="img-sample" src={imageSrc} ref={imageEl} alt="preview" style={{ maxHeight: 400 }} />
-          }
-        </p>
+        <div style={{ minHeight: 400 }}>
+          <p>
+            {imageSrc &&
+              <img id="img-sample" src={imageSrc} ref={imageEl} alt="preview" style={{ maxHeight: 400 }} />
+            }
+
+            {!imageSrc &&
+              <img alt="placeholder" src="https://via.placeholder.com/350?text=preview" />
+            }
+          </p>
+        </div>
         <Divider className={classes.someMarginBottom} />
         <div>
           <Typography gutterBottom variant="body2">
@@ -155,7 +161,7 @@ const IndexPage = ({ location }) => {
             <br/><br/>
             This is all done in the web browser using <Link href="https://www.tensorflow.org/js" target="_blank" rel="noopener">tensorflow.js</Link>
             <br/><br/>
-            This was a site I created for a tech talk I gave in Feb 27 2020.
+            This was a site I created for a tech talk I gave in Feb 27 2020. Here are the slides.
           </Typography>
         </div>
       </div>
