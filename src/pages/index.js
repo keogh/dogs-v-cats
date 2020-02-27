@@ -5,6 +5,7 @@ import * as tf from '@tensorflow/tfjs';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
+import PetsIcon from '@material-ui/icons/Pets';
 
 import Layout from "../components/layout"
 // import Image from "../components/image"
@@ -75,18 +76,22 @@ const IndexPage = ({ location }) => {
       <CssBaseline />
       <div>
         <Typography paragraph>
-          Select a image:
-        </Typography>
-        <p>
+          Select a image:&nbsp;
           <input
             id="input-image"
             type="file"
             accept="image/png, image/jpeg"
             onChange={handleImageChange}
           />
-        </p>
+        </Typography>
         <p>
-          <Button variant="contained" color="primary" onClick={handlePredict} disabled={!imageSrc}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handlePredict}
+            disabled={!imageSrc}
+            endIcon={<PetsIcon />}
+          >
             Predict
           </Button>
         </p>
@@ -96,8 +101,8 @@ const IndexPage = ({ location }) => {
               <Typography display="inline" variant="h5">
                 This is a&nbsp;
               </Typography>
-              <Typography display="inline" variant="h3" color="primary">
-                {predictedData.label}
+              <Typography display="inline" variant="h4" color="primary">
+                <strong>{predictedData.label}</strong>
               </Typography>
             </p>
 
