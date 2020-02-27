@@ -1,3 +1,5 @@
+import * as tf from '@tensorflow/tfjs';
+
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Link from '@material-ui/core/Link';
@@ -5,11 +7,9 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import PetsIcon from '@material-ui/icons/Pets';
-// import { Link } from "gatsby"
-import * as tf from '@tensorflow/tfjs';
+
 import React, { useEffect, useRef, useState } from "react";
 import Layout from "../components/layout";
-// import Image from "../components/image"
 import SEO from "../components/seo";
 
 
