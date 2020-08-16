@@ -1,3 +1,7 @@
+## Demo
+
+https://keogh.github.io/dogs-vs-cats/
+
 ## TODO
 * Multiple images
 * Google Analytics
