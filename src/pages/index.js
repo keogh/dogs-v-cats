@@ -149,9 +149,9 @@ const IndexPage = ({ location }) => {
           <Typography gutterBottom variant="body2">
             This model was trained with <Link href="https://keras.io/" target="_blank" rel="noopener">Keras</Link> library in python with <Link href="https://tensorflow.org/" target="_blank" rel="noopener">Tensorflow</Link> as backend.
             <br/><br/>
-            I used the <Link href="https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition" target="_blank" rel="noopener">"Dogs vs Cats Redux: Kernels Edition"</Link> dataset un <Link href="https://www.kaggle.com/" target="_blank" rel="noopener">Kaggle</Link>.
+            I used the <Link href="https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition" target="_blank" rel="noopener">"Dogs vs Cats Redux: Kernels Edition"</Link> dataset in <Link href="https://www.kaggle.com/" target="_blank" rel="noopener">Kaggle</Link>.
             <br/><br/>
-            I trained it using <Link href="http://cs231n.github.io/convolutional-networks/" target="_blank" rel="noopener">convolutional neural network</Link> with a <Link href="https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html" target="_blank" rel="noopener">data augmentation</Link> technique based on my readings in <Link href="https://twitter.com/fchollet" target="_blank" rel="noopener">François Chollet's</Link> book <Link href="https://www.goodreads.com/book/show/33986067-deep-learning-with-python" target="_blank" rel="noopener">Deep Learning with Python</Link>.
+            I trained it using a <Link href="http://cs231n.github.io/convolutional-networks/" target="_blank" rel="noopener">Convolutional Neural Network</Link> with a <Link href="https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html" target="_blank" rel="noopener">data augmentation</Link> technique based on my readings from <Link href="https://twitter.com/fchollet" target="_blank" rel="noopener">François Chollet's</Link> book <Link href="https://www.goodreads.com/book/show/33986067-deep-learning-with-python" target="_blank" rel="noopener">Deep Learning with Python</Link>.
             <br/><br/>
             You can see all the data preparation, training, evaluation, test, accuracy in the Kaggle notebook: <Link href="https://www.kaggle.com/keogh24/dogs-vs-cats-keras-data-augmentation/" target="_blank" rel="noopener">https://www.kaggle.com/keogh24/dogs-vs-cats-keras-data-augmentation/</Link>
             <br/><br/>
@@ -161,7 +161,7 @@ const IndexPage = ({ location }) => {
             <br/><br/>
             This is all done in the web browser using <Link href="https://www.tensorflow.org/js" target="_blank" rel="noopener">tensorflow.js</Link>
             <br/><br/>
-            This was a site I created for a tech talk I gave in Feb 27 2020. <Link href="https://docs.google.com/presentation/d/1tA-exdsWqpev8z2jaMiXwrot0eYI2m8AAfpyejTD9nQ/edit?usp=sharing" target="_blank" rel="noopener">Here are the slides</Link>.
+            This is a site I created for a tech talk I gave in Feb 27 2020. <Link href="https://docs.google.com/presentation/d/1tA-exdsWqpev8z2jaMiXwrot0eYI2m8AAfpyejTD9nQ/edit?usp=sharing" target="_blank" rel="noopener">Here are the slides</Link>.
           </Typography>
         </div>
       </div>
